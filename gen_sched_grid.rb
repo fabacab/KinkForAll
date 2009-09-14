@@ -1,5 +1,32 @@
+#
+##
+### This script generates an hCalendar as an HTML table to archive a KinkForAll
+### event's Schedule Grid. The resultant markup should be placed on the wiki
+### at http://wiki.KinkForAll.org/KinkForAll#{EVENT_LOCALE}Schedule
+##
+#
+
+### @see http://wiki.KinkForAll.org/KinkForAllLocationSchedule
+### @file gen_sched_grid.rb
+### @licsense GPL3
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+###
+
 require 'date'
 
+EVENT_LOCALE='Boston'
 NUM_LOC = 4 # number of locations
 EVENT_START=DateTime.parse('2009-09-12T10:40:00-04:00')
 EVENT_END=DateTime.parse('2009-09-12T17:00:00-04:00')
@@ -8,7 +35,7 @@ LUNCH_END=DateTime.parse('2009-09-12T13:20:00-04:00')
 STEP=20/(24*60).to_f # length in minutes over minutes in a day
 
 puts <<XXX
-<table width="100%" cellspacing="1" cellpadding="1" class="pbNotSortable vcalendar" summary="KinkForAll Boston Schedule Grid">
+<table width="100%" cellspacing="1" cellpadding="1" class="pbNotSortable vcalendar" summary="KinkForAll #{EVENT_LOCALE} Schedule Grid">
     <thead>
         <tr>
             <td>&nbsp;</td>
